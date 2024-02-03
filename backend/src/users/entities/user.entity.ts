@@ -23,7 +23,15 @@ export class User {
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 
-  @Column({ nullable: true })
-  role: string;
+  @Column({
+    type: 'enum',
+    enum: ['admin','customer','seller'],
+    default: 'customer'
+  })
+  role: string
+
+  
+
+
 
 }
